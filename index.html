@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Series de Televisión</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .main-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .tabla-section {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .detalle-section {
+            flex: 0 0 350px;
+        }
+        
+        .table {
+            margin-bottom: 20px;
+        }
+        
+        .table thead {
+            background-color: #007bff;
+            color: white;
+        }
+        
+        .table thead th {
+            border: none;
+            padding: 12px;
+            font-weight: bold;
+        }
+        
+        .table tbody td {
+            padding: 12px;
+            vertical-align: middle;
+        }
+        
+        .table tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: #f8f9fa;
+        }
+        
+        .serie-row {
+            transition: background-color 0.2s;
+        }
+        
+        .serie-row.table-active {
+            background-color: #cfe2ff !important;
+            font-weight: bold;
+        }
+        
+        .summary {
+            text-align: center;
+            padding: 15px;
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 5px;
+            color: #0c5460;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .summary p {
+            margin: 0;
+        }
+        
+        .summary strong {
+            color: #007bff;
+            font-size: 18px;
+        }
+        
+        .card {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .card-title {
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        
+        .card-text {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .alert {
+            margin: 0;
+        }
+        
+        .btn-primary {
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .detalle-section {
+                flex: 0 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>📺 Gestor de Series de Televisión</h1>
+        
+        <div class="content-wrapper">
+            <!-- TABLA DE SERIES -->
+            <div class="tabla-section">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Canal</th>
+                            <th>Temporadas</th>
+                        </tr>
+                    </thead>
+                    <tbody id="seriesTableBody">
+                    </tbody>
+                </table>
+                
+                <div class="summary" id="averageSection">
+                </div>
+            </div>
+            
+          
+            <div class="detalle-section">
+                <div id="detalleCard">
+                    <div class="alert alert-info" role="alert">
+                        Selecciona una serie para ver el detalle
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+    
+    
+    <script type="module" src="./dist/app.js"></script>
+</body>
+</html>

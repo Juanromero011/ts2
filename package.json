@@ -1,0 +1,19 @@
+{
+  "name": "ts1",
+  "version": "1.0.0",
+  "description": "Taller de TypeScript - Ejercicios prácticos",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start": "node dist/index.js",
+    "dev": "tsc && node dist/index.js"
+  },
+  "keywords": ["typescript", "taller", "ejercicios"],
+  "author": "Estudiante",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
